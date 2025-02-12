@@ -14,7 +14,7 @@ stage('Upload to AWS') {
 steps {
 withAWS(region:'us-east-1',credentials:'s3creds') {
 sh 'echo "Uploading content with AWS creds"'
-s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'.'
+s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'**/*'
 bucket:'week5-jenkins-bucket')
 }
 }
